@@ -1,0 +1,18 @@
+* {box-sizing: border-box;}
+
+form, div {
+	display: flex;
+	flex-direction: column;
+}
+label {
+	font-size: 30px;
+}
+input {
+	width: 20%;
+	margin-left: 40%;
+	padding: 6px;
+	margin-top: 12px;
+}
+form {
+	text-align: center;
+}
