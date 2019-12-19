@@ -1,10 +1,10 @@
 class User extends React.Component {
   render() {
     return (
-      <div>
-        <img src={this.props.user.avatar_url} style={{maxWidth: '100px'}}/>
+      <span>
+        <img src={this.props.user.avatar_url}/>
         <a href={this.props.user.html_url} target="_blank">{this.props.user.login}</a>
-      </div>
+      </span>
     );
   }
 }
@@ -16,7 +16,7 @@ class UsersList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="people">
         {this.users}
       </div>
     );
@@ -47,14 +47,15 @@ class App extends React.Component {
     render() {
       return (
         <div>
+        <div className="szukaj"><p>Wyszukiwarka użytkowników GitHub</p></div>
           <form onSubmit={event => this.onSubmit(event)}>
-            <label htmlFor="searchText">Search by user name</label>
+            <label htmlFor="searchText">Podaj nazwę użytkownika</label>
             <input
               type="text"
               id="searchText"
               onChange={event => this.onChangeHandle(event)}
               value={this.state.searchText}>
-            </input>  
+            </input> 
           </form>
           <UsersList users={this.state.users}></UsersList>
         </div>
